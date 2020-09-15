@@ -1,0 +1,52 @@
+body{
+  margin: 0;
+  background-image: url(img.jpg);
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  padding: 0;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+.middle{
+  position: absolute;
+  transform: translate(-50%,-50%);
+  top: 50%;
+  left: 50%;
+}
+.container{
+  position: relative;
+  display: inline-block;
+  padding: 0 40px;
+  cursor: pointer;
+}
+.text{
+  text-transform: uppercase;
+  font-size: 100px;
+  font-weight: 900;
+  color: white;
+  position: relative;
+}
+.text::before{
+  content: attr(data-text);
+  position: absolute;
+  color: black;
+  width: 0;
+  top: 0;
+  overflow: hidden;
+  transition: 0.4s;
+}
+.container::before{
+  content: attr(data-text);
+  width: 0%;
+  height: 200%;
+  position: absolute;
+  background: whitesmoke;
+  right: 0;
+  top: 0;
+  transition: 0.4s;
+}
+.container:hover .text::before,
+.container:hover::before{
+  width: 100%;
+}
